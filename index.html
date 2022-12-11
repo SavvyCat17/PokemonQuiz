@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pokemon Type Effectiveness Quiz</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="scripts/PokeCache.js"></script>        
+        <script src="scripts/ajaxFetch.js"></script>
+        <script src="scripts/typeObjects.js"></script>      
+        <script src="scripts/PokeQuiz.js"></script>
+        <script src="scripts/Scores.js"></script>
+        <script src="scripts/main.js"></script>
+        
+    </head>
+    <body>
+        <header>
+            <p id="info">
+                The goal of this quiz-style game is to determine which move type out of four random types will deal the most to the Pokemon you've encountered.<br><br>
+                If you make the wrong choice three times, the game is over.<br><br>The type matchups used for this game are based on the 
+                <a target="_blank" href="https://bulbapedia.bulbagarden.net/wiki/Type/Type_chart#Changes">latest update</a> to the Pokemon type chart, 
+                but they do not account for Pokemon abilities that affect type matchups.<br><br>To get started, select a Pokemon generation and hit Play. Good luck!
+            </p>
+            <img src="./images/pokemon-logo.png" alt="">        
+        </header>
+        <table>                
+            <tr>
+                <td id="row-title">Generation:</td>
+                <td class="row-body">I</td>
+                <td class="row-body">II</td>
+                <td class="row-body">III</td>
+                <td class="row-body">IV</td>
+                <td class="row-body">V</td>
+                <td class="row-body">VI</td>
+                <td class="row-body">VII</td>
+                <td class="row-body">VIII</td>
+                <td><button id="play">PLAY</button></td>
+                <td><button id="retire">RETIRE</button></td>
+                <td><span id="loading"></span></td>
+            </tr>
+        </table>
+        <main>
+            <aside id="left">
+                <h3>High Scores</h3>
+                <ol id="high-scores"></ol>
+            </aside>            
+            <section id="game">
+                <section id="game-background">
+                    <section id="contents">
+                        <section id="poke-types"></section>
+                        <figure>
+                            <section id="pk-info">
+                                <h2></h2>
+                                <img src="" alt="">
+                                <figcaption></figcaption>
+                            </section>
+                        </figure>
+                        
+                        <section id="type-choices">
+                            <h3>Choose the type that will deal the most damage.</h3>
+                            <span></span><p></p>
+                            <p></p><span></span>
+                            <br>
+                            <span></span><p></p>
+                            <p></p><span></span>
+                        </section>
+                        <section id="quiz-buttons">
+                            <button id="submit">Submit</button>
+                            <button id="next">Next</button>
+                        </section>
+                        <p id="tooltip">( Hover over image to reveal the Pokemon's typing. )</p>
+                    </section>
+                </section>                
+            </section>
+            <aside id="right">
+                <h3>Current Score</h3>
+                <p id="curr-score">0</p>
+                <img class="strike" id="1" src="./images/x_small.png" alt="first_x">
+                <img class="strike" id="2" src="./images/x_small.png" alt="second_x">
+                <img class="strike" id="3" src="./images/x_small.png" alt="third_x">
+                <span></span>
+            </aside>
+        </main>
+    </body>
+</html>
